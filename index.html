@@ -6,13 +6,14 @@
 <title>Countdown Timer</title>
 <style>
   #timer {
-    font-size: 24px;
+    font-size: 36px; /* Adjust the font size as needed */
     text-align: center;
     margin-top: 50px;
   }
   #container {
-    text-align: center;
-    margin-top: 20px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
   }
   h1 {
     text-align: center;
@@ -62,13 +63,16 @@
     + minutes + "m " + seconds + "s ";
 
     if (distance < 0) {
-      clearInterval(x);
+      clearInterval(intervalId);
       document.getElementById("timer").innerText = "EXPIRED";
     }
   }
 
   // Initial call to update the countdown timer
   updateCountdown();
+
+  // Update the countdown timer every second
+  const intervalId = setInterval(updateCountdown, 1000);
 </script>
 
 </body>
