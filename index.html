@@ -14,15 +14,24 @@
     text-align: center;
     margin-top: 20px;
   }
+  h1 {
+    text-align: center;
+  }
 </style>
 </head>
 <body>
 
+<h1>Until we see each other again!</h1>
+
 <div id="timer"></div>
 
 <div id="container">
-  <input type="text" id="newDate" placeholder="Enter new date (YYYY-MM-DD HH:MM:SS)">
-  <button onclick="updateTimer()">Update Timer</button>
+  <div>
+    <input type="text" id="newDate" placeholder="Enter new date (YYYY-MM-DD HH:MM:SS)">
+  </div>
+  <div>
+    <button onclick="updateTimer()">Update Timer</button>
+  </div>
 </div>
 
 <script>
