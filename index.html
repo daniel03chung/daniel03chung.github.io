@@ -10,19 +10,10 @@
     text-align: center;
     margin-top: 50px;
   }
-  #container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-  }
   h1 {
     font-size: 100px; /* Adjust the font size for the header */
     text-align: center;
     margin-bottom: 30px; /* Add margin to create space between header and timer */
-  }
-  input[type="text"] {
-    font-size: initial; /* Revert to default font size for the input */
-    width: auto; /* Revert to auto width for the input */
   }
 </style>
 </head>
@@ -32,15 +23,6 @@
 
 <div id="timer"></div>
 
-<div id="container">
-  <div>
-    <input type="text" id="newDate" placeholder="YYYY-MM-DD HH:MM">
-  </div>
-  <div>
-    <button onclick="updateTimer()">Update Timer</button>
-  </div>
-</div>
-
 <!-- Insert the GIF here -->
 <div style="text-align: center;">
   <iframe src="https://giphy.com/embed/naAaDvbAoOYdW" width="288" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
@@ -49,18 +31,6 @@
 <script>
   let countDownDate = new Date("Feb 10, 2024 07:30:00").getTime();
   
-  function updateTimer() {
-    const newDateStr = document.getElementById("newDate").value.trim();
-    const newDate = new Date(newDateStr.replace(' ', 'T')).getTime();
-
-    if (!isNaN(newDate)) {
-      countDownDate = newDate;
-      updateCountdown();
-    } else {
-      alert("Invalid date format. Please enter date in YYYY-MM-DD HH:MM format.");
-    }
-  }
-
   function updateCountdown() {
     const now = new Date().getTime();
     const distance = countDownDate - now;
