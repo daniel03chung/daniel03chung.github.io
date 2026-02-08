@@ -1,60 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Countdown Timer</title>
-<style>
-  #timer {
-    font-size: 128px; /* Adjust the font size as needed */
-    text-align: center;
-    margin-top: 50px;
-  }
-  h1 {
-    font-size: 100px; /* Adjust the font size for the header */
-    text-align: center;
-    margin-bottom: 30px; /* Add margin to create space between header and timer */
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine?</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="card">
+    <h1>Natalie, will you be my Valentine?</h1>
 
-<h1>Until we see each other again!</h1>
+    <p class="subtitle">
+      🌹
+    </p>
 
-<div id="timer"></div>
+    <div class="buttons">
+      <button id="yes">Yes I love Daniel</button>
+      <button id="no">No I hate Daniel</button>
+    </div>
 
-<!-- Insert the GIF here -->
-<div style="text-align: center;">
-  <iframe src="https://giphy.com/embed/naAaDvbAoOYdW" width="288" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-</div>
+    <p id="response"></p>
+  </div>
 
-<script>
-  let countDownDate = new Date("Feb 23, 2024 00:00:00").getTime();
-  
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = countDownDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("timer").innerText = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-
-    if (distance < 0) {
-      clearInterval(intervalId);
-      document.getElementById("timer").innerText = "EXPIRED";
-    }
-  }
-
-  // Initial call to update the countdown timer
-  updateCountdown();
-
-  // Update the countdown timer every second
-  const intervalId = setInterval(updateCountdown, 1000);
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
